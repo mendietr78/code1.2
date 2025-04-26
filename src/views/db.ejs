@@ -1,0 +1,20 @@
+<%- include ('partials/_header'); %>
+
+
+
+<form action="/dbs/submit" method="POST">
+
+ 
+
+    <div>
+        <input type="text" name="ca0" placeholder="Categoria" value="<%= cats && cats.ca0 %>">
+    </div>
+    <label  for="co1">filename</label>
+    <input  type="text" id="co1" name="co1" placeholder="filename"
+    <label  for="co2">Code</label>
+    <textarea  type="text" id="co2" name="co2" placeholder="Code" style="width: 180%;"></textarea>
+    <a href="/cat" class="btn">Cancel</a>
+    <button class=btn type="submit">Guardar</button>
+</form>
+
+<%- include ('partials/_footer'); %>

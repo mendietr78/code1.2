@@ -1,0 +1,55 @@
+<%- include ('partials/_header'); %>
+
+<!-- FORM -->
+<div class="container">
+    <div class="row">
+        <h2 class="text-center">Visualizar</h2>
+
+        <div style="display: inline-block;">
+            <div class=container>
+                <div class="container">
+                    <div class="container">
+                        <h3><%= data && data.co1 %> <%= data && data.pg1 %></h3>
+                        <textarea id="codeTextarea" style="width: 180%; height: 300px;"><%= data && data.co2 %></textarea>
+                        
+                        <div class="button-group" style="margin-top: 15px;">
+                            <a href="/db" class="btn">Cancel</a>
+                            <button type="button" class="btn" onclick="copyToClipboard()">Copiar código</button>
+                            <button type="submit" class="btn">Guardar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function copyToClipboard() {
+        const textarea = document.getElementById('codeTextarea');
+        
+        // Selecciona el contenido del textarea
+        textarea.select();
+        textarea.setSelectionRange(0, 99999); // Para dispositivos móviles
+        
+        try {
+            // Intenta copiar el texto
+            const successful = document.execCommand('copy');
+            if(successful) {
+                alert('¡Código copiado al portapapeles!');
+                // Opcional: Cambiar temporalmente el texto del botón
+                const copyBtn = document.querySelector('button[onclick="copyToClipboard()"]');
+                copyBtn.textContent = '¡Copiado!';
+                setTimeout(() => {
+                    copyBtn.textContent = 'Copiar código';
+                }, 2000);
+            } else {
+                alert('No se pudo copiar automáticamente. Por favor usa Ctrl+C');
+            }
+        } catch (err) {
+            alert('Error al copiar: ' + err);
+        }
+    }
+</script>
+
+<%- include ('partials/_footer'); %>

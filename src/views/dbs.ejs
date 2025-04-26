@@ -1,0 +1,41 @@
+<%- include ('partials/_header'); %>
+
+<div class="col-md-7">
+    <div>
+        
+    </div>
+    <table class="table table-bordered table-hover">
+
+        <a href="/new" class="btn">Agregar</a>
+    <thead>
+        <tr>
+            <th>Filename</th>
+            
+        </tr>
+    </thead>
+  
+    <tbody>
+        <% for(var i = 0; i < data.length; i++) { %>
+      </div>
+      <td><%= data[i].ca0 %></td>
+      <td><%= data[i].co1 %></td>
+      <!-- <td style="width: 16em;"><%= data[i].co2 %></td> -->
+
+
+  
+      
+        <td class="plus">
+                  
+                    <a href="/db/edit/<%= data[i]._id %>" class="edit-btn">Editar</a>
+                    <a href="/db/view/<%= data[i]._id %>" class="edit-btn">Ver</a>
+                   
+                  
+                  
+                </td>
+            </tr>
+        <% } %>   
+        </tbody>
+    </table>
+  </div>
+
+  <%- include ('partials/_footer'); %>

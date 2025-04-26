@@ -1,0 +1,41 @@
+<%- include ('partials/_header'); %>
+
+<!-- FORM -->
+<div class="container">
+    <div class="row">
+        <h1 class="text-center">Editar</h1>
+
+        <div style="display: inline-block;">
+            <a href="/db/delete/<%= data._id %>" class="edit-btn" style="color: red;">Borrar</a>
+
+        <div class=container>
+            <div class="container">
+                <div class="container">
+                    <form action="/db/update/<%= data._id %>" method="POST">
+                        <div>
+                            <input type="text" name="ca0" placeholder="Proyecto" value="<%= data.ca0 %>">
+                        </div>
+                        <div>
+                            <input type="text" name="co1" placeholder="Filename" value="<%= data.co1 %>">
+                        </div>
+                        
+                        
+                        <div>
+                            <textarea type="text" name="co2" placeholder="Data" style="width: 180%;"><%= data.co2 %></textarea>
+                        </div>
+                        
+                        
+                        
+                        
+                        
+                            <a href="/cat" class="btn">Cancel</a>
+                            <button type="submit" class="btn">Guardar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include ('partials/_footer'); %>

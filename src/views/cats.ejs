@@ -1,0 +1,45 @@
+<%- include ('partials/_header'); %>
+
+<div class="col-md-7">
+    <div>
+        
+    </div>
+    <table class="table table-bordered table-hover">
+
+        <a href="/newcat" class="btn">Agregar</a>
+    <thead>
+        <tr>
+            <th>Filename</th>
+            
+        </tr>
+    </thead>
+  
+    <tbody>
+        <% for(var i = 0; i < cats.length; i++) { %>
+      </div>
+      <td><%= cats[i].ca0 %></td>
+      <!-- <td><%= cats[i].ca1 %></td> -->
+      <!-- <td style="width: 16em;"><%= cats[i].ca2 %></td> -->
+
+
+  
+      
+        <td class="plus">
+                  
+                    <a href="/cat/edit/<%= cats[i]._id %>" class="edit-btn">Editar</a>
+
+                    <!-- <a href="/db/<%= cats[i]._id %>" class="edit-btn">Registrar elemento</a> -->
+
+                    <div>
+                        <a href="/db/<%= cats[i].ca0 %>" class="edit-btn">Elementos</a>
+                    </div>
+                  
+                  
+                </td>
+            </tr>
+        <% } %>   
+        </tbody>
+    </table>
+  </div>
+
+  <%- include ('partials/_footer'); %>
